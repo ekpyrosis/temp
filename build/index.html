@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	    <title>Widget API</title>
+
+        <link href="/css/bootstrap.min.css" rel="stylesheet">
+        <link href="/css/font-awesome-4.0.3.css" rel="stylesheet">
+        <link href="/css/base.css" rel="stylesheet">
+        <link href="/img/favicon.ico" rel="shortcut icon">
+
+        
+
+    </head>
+
+    <body data-spy="scroll" data-target="#sidebar-nav" data-offset="50">
+
+        <div class="sidebar">
+    <h3 class="brand">
+        <a class="navbar-brand" href="#">API Star</a>
+        <!-- <a href="#">Widget API</a> -->
+    </h3>
+
+    <select class="menu-context-mobile">
+        <option value="" selected="selected">Go to...</option>
+        
+        
+            <optgroup label="Links">
+                
+                    <option value="#listWidgets">List all the widgets.</option>
+                
+            </optgroup>
+        
+    </select>
+    <div class="menu-list">
+        
+         
+            <ul class="menu-content">
+                
+                <li>
+                    <a href="#listWidgets">List all the widgets.</a>
+                </li>
+                
+            </ul>
+         
+    </div>
+</div>
+
+        <div class="container" id="main">
+            <div class="row">
+                <div class="col-md-12 main-container">
+                    <div class="row">
+    <div class="col-md-6 intro-title">
+        
+            <p>An example API for widgets</p>
+        
+    </div>
+    <div class="col-md-6 source-code-chooser">
+            
+                <ul class="nav nav-pills" id="language-control">
+                    
+                        <li class="nav-item">
+                            <a href="#" class="nav-link active" data-language="javascript">javascript</a>
+                        </li>
+                    
+                        <li class="nav-item">
+                            <a href="#" class="nav-link " data-language="python">python</a>
+                        </li>
+                    
+                </ul>
+            
+        </ul>
+    </div>
+</div>
+
+
+
+
+    <div class="row coredocs-link">
+    <div class="col-md-6 docs-content">
+        <h3 id="listWidgets" class="coredocs-link-title">List all the widgets. <a href="#listWidgets"><i class="fa fa-link" aria-hidden="true"></i>
+    </a></h3>
+
+        <div class="meta">
+            <span class="label label-primary">GET</span>
+            <code>https://www.example.org/widgets</code>
+        </div>
+
+        
+
+
+
+    <h4>Query Parameters</h4>
+    <p>The following parameters should be included as part of a URL query string.</p>
+    <table class="parameters table table-bordered table-striped">
+        <thead>
+            <tr><th>Parameter</th><th>Description</th></tr>
+        </thead>
+        <tbody>
+            
+            <tr><td class="parameter-name"><code>search</code></td><td>Filter widgets by this search term.</td></tr>
+            
+        </tbody>
+    </table>
+
+
+
+    </div>
+
+    <div class="col-md-6 section-secondary">
+        
+            
+            
+            <pre class="highlight javascript " data-language="javascript"><code>var url = new URL("https://www.example.org/widgets");
+var options = {
+    method: "GET"
+};
+url.search = new URLSearchParams({
+    search: ...
+});
+
+fetch(url, options).then(function(response) {
+    if (!response.ok) {
+        throw new Error(response.statusText);
+    }
+    console.log(response.json());
+})
+</code></pre>
+        
+            
+            
+            <pre class="highlight python d-none" data-language="python"><code>import requests
+
+url = "https://www.example.org/widgets"
+params = {
+    "search": ...
+}
+
+response = requests.get(url, params=params)
+response.raise_for_status()
+print(response.json())
+</code></pre>
+        
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+
+        <script src="/js/jquery-1.10.2.min.js"></script>
+        <script src="/js/bootstrap.min.js"></script>
+        <script src="/js/api.js"></script>
+    </body>
+</html>
